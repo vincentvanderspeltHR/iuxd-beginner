@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+  <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
 
   <title>Progressive Web Apps</title>
 
@@ -15,7 +15,23 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link href="cover.css" rel="stylesheet">
+  <link href="./cover.css" rel="stylesheet">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- IOS Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="PWA">
+  <link rel="apple-touch-icon" href="./icons/PWA152x152.png">
+
+  <!-- Meta Tag -->
+  <meta name="description" content="An informational PWA app">
+
+  <!-- Meta theme color -->
+  <meta name="theme-color" content="#2F3BA2" />
+
 </head>
 
 <body class="text-center">
@@ -25,12 +41,12 @@
       <div class="inner">
         <h3 class="masthead-brand">Progressive Web Apps</h3>
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link" href="#">What_Is_It</a>
-          <a class="nav-link" href="#">How_It_Works</a>
-          <a class="nav-link" href="#">Manifest</a>
-          <a class="nav-link" href="#">Basic_Offline</a>
-          <a class="nav-link" href="#">Full_Offline</a>
-          <a class="nav-link" href="#">Install_Experience</a>
+          <a class="nav-link" onClick="document.getElementById('what_is_it').scrollIntoView();">What_Is_It</a>
+          <a class="nav-link" onClick="document.getElementById('how_it_works').scrollIntoView();">How_It_Works</a>
+          <a class="nav-link" onClick="document.getElementById('manifest').scrollIntoView();">Manifest</a>
+          <a class="nav-link" onClick="document.getElementById('basic_offline').scrollIntoView();">Basic_Offline</a>
+          <a class="nav-link" onClick="document.getElementById('full_offline').scrollIntoView();">Full_Offline</a>
+          <a class="nav-link" onClick="document.getElementById('install_experience').scrollIntoView();">Install_Experience</a>
         </nav>
       </div>
     </header>
@@ -45,7 +61,7 @@
     </main>
 
     <main role="main" style="text-align: left;" class="inner cover in-left">
-      <h1 class="cover-heading">What is a Progressive Web App?</h1>
+      <h1 class="cover-heading" id="what_is_it">What is a Progressive Web App?</h1>
       <p class="lead" style="padding-bottom: 1em;">
         PWA’s are installable unlike other web applications.
         Because of this and with the use of manifests PWA’s provide an app-like experience on desktop and mobile.
@@ -79,12 +95,12 @@
           <li><span style="color: rgb(145, 255, 120);">Fast</span> loading speeds</li>
           <li><span style="color: rgb(145, 255, 120);">Background Synchronization</span> for updating data</li>
         </ul>
-        <p class="lead" style="padding-bottom: 1em;">
+        <p class="lead" style="padding-bottom: 5em;">
           Progressive Web apps are also not very hard to make, and are being pushed by Google.
           Google believes PWA’s are potentially the future of apps as a whole.
         </p>
 
-        <h3 class="cover-heading">How it works</h3>
+        <h1 class="cover-heading" id="how_it_works">How it works</h1>
         <p class="lead" style="padding-bottom: 1em;">
           The main work of a PWA is being done by a JavaScript worker called the Service Worker.
           The Service Worker is a script that can be run in the background by your browser, separate from your web page.
@@ -112,16 +128,30 @@
               id="diagram-event" />
           </defs>
         </svg>
-        <div class="row">
+
+        <p class="lead" style="padding-bottom: 1em;">
+          When a Service Worker first gets installed, it tries to put a list of files
+          you created into the cache so it can potentially get the files from there next time.
+          This depends on the specific cache strategy that has been used.
+          If the service worker fails to cache files for some reason, it tries to cache them the next time.
+        </p>
+
+        <div class="row" style="padding-bottom: 3em;">
+
           <div class="col-6">
             <p class="lead" style="padding-bottom: 1em;">
-              When a Service Worker first gets installed, it tries to put a list of files
-              you created into the cache so it can potentially get the files from there next time.
-              This depends on the specific cache strategy that has been used.
-              If the service worker fails to cache files for some reason, it tries to cache them the next time.
+              In the diagram you can see how the Service Worker is instantiated for the first time.
+              The service Worker is going to be installed once you go to the website, putting itself in Cache.
+              This happens after you have loaded the page, so that there is no lack of performance on reaching the
+              website.
+              Once the Service Worker is installed, It puts all necessary files from the website into the Cache.
+              After this it's ready to be used and activated when reaching the website another time.
+              It does not matter if the user is on-line or off-line at this point, as the Service Worker and the whole
+              website is stored in Cache.
             </p>
           </div>
-          <div class="col-6" >
+
+          <div class="col-6">
             <div class="diagram-container" style="padding-top: 25%; padding-bottom: 25%;">
               <svg viewBox="0 0 549.92853 342.97787">
                 <g transform="translate(-36.352 -42.615)">
@@ -194,15 +224,19 @@
               </svg>
             </div>
           </div>
+
         </div>
 
-    </main>
+        <p class="lead" style="padding-bottom: 1em;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et lacus dapibus, lacinia odio vitae, consequat massa. 
+            Cras eget eros id turpis luctus tincidunt. Sed finibus, libero porttitor pharetra elementum, metus leo ultricies nunc, vel cursus leo tellus eu ante. 
+            Quisque porttitor posuere diam quis malesuada. Morbi viverra quam pharetra, laoreet lectus non, scelerisque mi. Aliquam ut nunc quis nunc consectetur aliquam. 
+            Morbi dui ipsum, efficitur ut luctus varius, pellentesque ac orci. Aliquam blandit feugiat metus, ultricies lobortis neque. Nulla vitae suscipit lorem, vel porttitor mi. 
+            Vivamus nec neque mi. Quisque sodales dolor volutpat fringilla mollis. Nulla tincidunt, nisi sit amet dapibus elementum, lacus velit venenatis diam, blandit lacinia elit ex quis neque. 
+            Sed tincidunt tempor velit, quis efficitur leo gravida sed. Etiam tempor eleifend arcu, ac vulputate arcu ullamcorper egestas. Maecenas scelerisque at libero ac semper.
+        </p>
 
-
-
-    <main role="main" class="inner cover">
-
-      <!-- <div class="diagram-container" style="padding-top: 15%; padding-bottom: 15%;">
+        <!-- <div class="diagram-container" style="padding-top: 15%; padding-bottom: 15%;">
         <svg viewBox="0 0 549.92853 265">
           <g transform="translate(-36.352 -120.593)">
             <text x="248.603" y="384.105" class="label">ServiceWorker</text>
@@ -313,8 +347,18 @@
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="../../assets/js/vendor/popper.min.js"></script>
-  <script src="../../dist/js/bootstrap.min.js"></script>
+  <!-- <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script> -->
+  <script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+            .then((reg) => {
+              console.log('Service worker registered.', reg);
+            });
+      });
+    }
+  </script>
 
 
 </body>
