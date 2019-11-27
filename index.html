@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
 
   <title>Progressive Web Apps</title>
 
@@ -16,6 +15,9 @@
 
   <!-- Custom styles for this template -->
   <link href="./cover.css" rel="stylesheet">
+
+  <!-- Animate on scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Manifest -->
   <link rel="manifest" href="./manifest.json">
@@ -30,8 +32,7 @@
   <meta name="description" content="An informational PWA app">
 
   <!-- Meta theme color -->
-  <meta name="theme-color" content="#2F3BA2" />
-
+  <meta name="theme-color" content="#333" />
 </head>
 
 <body class="text-center">
@@ -51,25 +52,25 @@
       </div>
     </header>
 
-    <main role="main" style="padding-top: 25%; padding-bottom: 20%; text-align: left;" class="inner cover in-left">
-      <h1 class="cover-heading">Introduction</h1>
-      <p class="lead">
+    <main role="main" style="padding-top: 25%; padding-bottom: 20%; text-align: left;" class="inner cover">
+      <h1 class="cover-heading" data-aos="fade-right">Introduction</h1>
+      <p class="lead" data-aos="fade-right">
         Progressive Web Apps are web applications that act as native apps for mobile or pc.
         This means that you can utilize native features such as camera, push notifications and offline use.
         On this page we’re going to explain exactly what a Progressive Web App (PWA from now on)
         is and the advantages of having a PWA.</p>
     </main>
 
-    <main role="main" style="text-align: left;" class="inner cover in-left">
-      <h1 class="cover-heading" id="what_is_it">What is a Progressive Web App?</h1>
-      <p class="lead" style="padding-bottom: 1em;">
+    <main role="main" style="text-align: left;" class="inner cover">
+      <h1 class="cover-heading" id="what_is_it" data-aos="fade-right">What is a Progressive Web App?</h1>
+      <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
         PWA’s are installable unlike other web applications.
         Because of this and with the use of manifests PWA’s provide an app-like experience on desktop and mobile.
         They do this without losing the advantages of being web apps, so you’re able to reach them on any browser
         through the web.
         Because of the use of Service Workers (a form of JavaScript workers) they become much faster and very reliable.
       </p>
-      <p class="lead" style="padding-bottom: 1em;">
+      <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
         PWA’s are fast because they load meaningful content and interactivity on screen much quicker than other web
         apps.
         You also don’t have to go through the app store to install it, you can install it smoothly straight from the
@@ -78,7 +79,7 @@
         longer and requires more effort from users.
         As a result, users usually don’t install normal apps as quickly because of all the hassle.
       </p>
-      <p class="lead" style="padding-bottom: 1em;">
+      <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
         A good tool to check if a webapp is progressive is <a href="https://developers.google.com/web/tools/lighthouse"
           style="color: rgb(120, 190, 255);">Lighthouse</a>.
         Lighthouse is baked into the Chrome DevTools if you press F12 inside Google Chrome.
@@ -87,21 +88,21 @@
         this <a href="https://pokedex.org/" style="color: rgb(120, 190, 255);">Pokédex</a>
         and a simple <a href="https://airhorner.com/" style="color: rgb(120, 190, 255);">Airhorner</a>.
       </p>
-      <h3 class="cover-heading">Advantages of a PWA</h1>
-        <ul class="lead" style="padding-bottom: 1em;">
+      <h3 class="cover-heading" data-aos="fade-right">Advantages of a PWA</h1>
+        <ul class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
           <li><span style="color: rgb(145, 255, 120);">Native</span> app features</li>
           <li><span style="color: rgb(145, 255, 120);">Installable</span> on PC and mobile</li>
           <li><span style="color: rgb(145, 255, 120);">Push notifications</span> can be used</li>
           <li><span style="color: rgb(145, 255, 120);">Fast</span> loading speeds</li>
           <li><span style="color: rgb(145, 255, 120);">Background Synchronization</span> for updating data</li>
         </ul>
-        <p class="lead" style="padding-bottom: 5em;">
+        <p class="lead" style="padding-bottom: 5em;" data-aos="fade-right">
           Progressive Web apps are also not very hard to make, and are being pushed by Google.
           Google believes PWA’s are potentially the future of apps as a whole.
         </p>
 
-        <h1 class="cover-heading" id="how_it_works">How it works</h1>
-        <p class="lead" style="padding-bottom: 1em;">
+        <h1 class="cover-heading" id="how_it_works" data-aos="fade-right">How it works</h1>
+        <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
           The main work of a PWA is being done by a JavaScript worker called the Service Worker.
           The Service Worker is a script that can be run in the background by your browser, separate from your web page.
           This enables a lot of features PWA’s bring to the table.
@@ -129,14 +130,14 @@
           </defs>
         </svg>
 
-        <p class="lead" style="padding-bottom: 1em;">
+        <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
           When a Service Worker first gets installed, it tries to put a list of files
           you created into the cache so it can potentially get the files from there next time.
           This depends on the specific cache strategy that has been used.
           If the service worker fails to cache files for some reason, it tries to cache them the next time.
         </p>
 
-        <div class="row" style="padding-bottom: 3em;">
+        <div class="row" style="padding-bottom: 3em;" data-aos="fade-right">
 
           <div class="col-6">
             <p class="lead" style="padding-bottom: 1em;">
@@ -227,15 +228,16 @@
 
         </div>
 
-        <p class="lead" style="padding-bottom: 1em;">
+        <!-- <div data-aos="fade-right"> -->
+          <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et lacus dapibus, lacinia odio vitae, consequat massa. 
             Cras eget eros id turpis luctus tincidunt. Sed finibus, libero porttitor pharetra elementum, metus leo ultricies nunc, vel cursus leo tellus eu ante. 
             Quisque porttitor posuere diam quis malesuada. Morbi viverra quam pharetra, laoreet lectus non, scelerisque mi. Aliquam ut nunc quis nunc consectetur aliquam. 
             Morbi dui ipsum, efficitur ut luctus varius, pellentesque ac orci. Aliquam blandit feugiat metus, ultricies lobortis neque. Nulla vitae suscipit lorem, vel porttitor mi. 
             Vivamus nec neque mi. Quisque sodales dolor volutpat fringilla mollis. Nulla tincidunt, nisi sit amet dapibus elementum, lacus velit venenatis diam, blandit lacinia elit ex quis neque. 
             Sed tincidunt tempor velit, quis efficitur leo gravida sed. Etiam tempor eleifend arcu, ac vulputate arcu ullamcorper egestas. Maecenas scelerisque at libero ac semper.
-        </p>
-
+          </p>
+        
         <!-- <div class="diagram-container" style="padding-top: 15%; padding-bottom: 15%;">
         <svg viewBox="0 0 549.92853 265">
           <g transform="translate(-36.352 -120.593)">
@@ -329,16 +331,15 @@
 
     </main>
 
-
-
     <footer class="mastfoot mt-auto" style="padding-top: 5em;">
       <div class="inner">
-        <p>Made by <a href="https://www.linkedin.com/in/derk-sonneveld-21533b134/">Derk Sonneveld</a> & <a
-            href="https://www.linkedin.com/in/vincent-van-der-spelt-61b17b12b/">Vincent van der Spelt</a></p>
+        <p>Made by 
+          <a href="https://www.linkedin.com/in/derk-sonneveld-21533b134/">Derk Sonneveld</a> & 
+          <a href="https://www.linkedin.com/in/vincent-van-der-spelt-61b17b12b/">Vincent van der Spelt</a>
+        </p>
       </div>
     </footer>
   </div>
-
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -360,7 +361,11 @@
     }
   </script>
 
-
 </body>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </html>
