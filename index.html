@@ -176,7 +176,7 @@
             <div class="diagram-container" style="padding-top: 25%; padding-bottom: 25%;">
               <svg viewBox="0 0 549.92853 342.97787">
                 <g transform="translate(-36.352 -42.615)">
-                  <text x="100.277" y="188.362" class="label">ServiceWorker</text>
+                  <text x="100.277" y="188.362" class="label">Service Worker</text>
                   <text x="315.902" y="189.362" class="label">Install</text>
                   <text x="538" y="186.362" class="label">Activate</text>
                   <text y="379.362" x="216.277" class="label">Cache</text>
@@ -289,6 +289,53 @@
 
     <section data-aos="fade-right">
       <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">On Push message</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          The Push API is a feature that has been built on top of the Service Worker. This allows the Service Worker 
+          to receive a push message which it can turn into a push message on your device if needed. 
+          The Push API can 'wake up' your Service Worker in response to a message from the messaging service. 
+          This all happens in the background, so not even the tab has to be open. When a push message has been received, 
+          it may mean the Service worker needs to receive data from the server, such as a chat message. 
+          The Service Worker may then put the received data in the cache and send a push notification to the user's device. 
+          This strategy is often implemented next to other strategies, and is obviously useful for chat messaging.
+        </p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">On background-sync</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          Background sync is another feature that's built on top of the Service Worker. 
+          It works almost the same as Push API but on a time schedule instead of a push message.
+          This strategy is useful if you have a lot of non-urgent updates, especially if it happens so regularly that sending a 
+          push message each update would be too frequent. News articles are a good example of this.
+        </p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">Cache only</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          Cache only is a very straight-forward strategy. It is ideal for anything that's static on your site, so stuff that doesn't change
+          much or at all. It's implemented in almost all PWA's since there are always static features on your website.
+        </p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">Network only</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          This strategy is also very straight-forward. It is used for things that have no offline equivalent like POST-requests.
+          Network only is also used a lot but, unlike cache only, has a workaround. This workaround is background sync. 
+        </p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
         <h3 class="cover-heading">Cache, falling back to network</h3>
         <p class="lead" style="padding-bottom: 1em;">
           This strategy is ideal for building an offline-first web app.
@@ -316,29 +363,48 @@
       </main>
     </section>
 
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">Network falling back to cache</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          This is the most commonly used strategy when it comes to an offline experience in your PWA. The Service Worker first tries to get 
+          data from the server through the internet. If this fails for some reason (for example, your connection drops)
+          the Service Worker immediately checks if something is available in the cache. If it is, it shows outdated content from
+          the cache. This strategy is on of the quickest and easiest to implement. The one downside of this strategy is that if a user
+          has a very slow connection, but is connected to the internet nonetheless, it won't show content out of the cache first and update
+          it at a later point in time. 
+        </p>
+      </main>
+    </section>
 
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">Cache then network</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          Cache then network is one of the fastest strategies there is, and it is even optimised for content that updates frequently.
+          Once the Service Worker gets a page request, it gets it from the server while at the same time showing the user a slightly outdated page
+          from the cache if available. Once this has been done, the Service Worker puts the newest version into the cache and shows the user
+          the updated content later. The only downside here is that the Service Worker is doing much more work then with other strategies. 
+          This downside is very negligible since the Service Worker works on it's own thread so it shouldn't affect the device's speed when loading a page.
+        </p>
+      </main>
+    </section>
 
-
-    <!-- <div data-aos="fade-right"> -->
-    <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et lacus dapibus, lacinia odio vitae, consequat
-      massa.
-      Cras eget eros id turpis luctus tincidunt. Sed finibus, libero porttitor pharetra elementum, metus leo ultricies
-      nunc, vel cursus leo tellus eu ante.
-      Quisque porttitor posuere diam quis malesuada. Morbi viverra quam pharetra, laoreet lectus non, scelerisque mi.
-      Aliquam ut nunc quis nunc consectetur aliquam.
-      Morbi dui ipsum, efficitur ut luctus varius, pellentesque ac orci. Aliquam blandit feugiat metus, ultricies
-      lobortis neque. Nulla vitae suscipit lorem, vel porttitor mi.
-      Vivamus nec neque mi. Quisque sodales dolor volutpat fringilla mollis. Nulla tincidunt, nisi sit amet dapibus
-      elementum, lacus velit venenatis diam, blandit lacinia elit ex quis neque.
-      Sed tincidunt tempor velit, quis efficitur leo gravida sed. Etiam tempor eleifend arcu, ac vulputate arcu
-      ullamcorper egestas. Maecenas scelerisque at libero ac semper.
-    </p>
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">Generic fallback</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          The Generic fallback strategy is the easiest to implement, and has been implemented even before PWA's existed. A great example of seeing this 
+          strategy in use is user avatars. When Facebook has no connection available and fails to retrieve a user's avatar, it show a basic avatar that is already in the cache. 
+          This strategy is great for basic sites that just want to alert the user that there is no internet available without getting the ugly standard 'no internet available'.
+        </p>
+      </main>
+    </section>
 
     <!-- <div class="diagram-container" style="padding-top: 15%; padding-bottom: 15%;">
         <svg viewBox="0 0 549.92853 265">
           <g transform="translate(-36.352 -120.593)">
-            <text x="248.603" y="384.105" class="label">ServiceWorker</text>
+            <text x="248.603" y="384.105" class="label">Service Worker</text>
             <text x="89.548" y="252.972" class="label">Page</text>
             <text x="537.439" y="383.491" class="label">Network</text>
             <text x="400.625" y="253.272" class="label">Cache</text>
@@ -452,7 +518,7 @@
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
           .then((reg) => {
-            console.log('Service worker registered.', reg);
+            console.log('Service Worker registered.', reg);
           });
       });
     }
