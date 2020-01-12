@@ -405,7 +405,45 @@
       <main role="main" style="text-align: left;" class="inner cover">
         <h1 id="manifest" class="cover-heading" style="padding-bottom: .5em;">Web app manifest</h1>
         <p class="lead" style="padding-bottom: 1em;">
-          The web app manifest is
+          The web app manifest is a very basic JSON file that gives the browser information about your web application.
+          The manifest also contains information on how the browser should behave when stuff gets installed on the user's device.
+          Your web app having a manifest is mandatory if you want the Chrome browser to show the 'Add to homescreen' prompt.
+          A typical web app manifest looks something like this: 
+          <code>
+            {
+              "name": "Progressive Web Apps",
+              "short_name": "PWA",
+              "icons": [{
+                "src": "./icons/PWA128x128.png",
+                  "sizes": "128x128",
+                  "type": "image/png"
+                }, {
+                  "src": "./icons/PWA144x144.png",
+                  "sizes": "144x144",
+                  "type": "image/png"
+                }, {
+                  "src": "./icons/PWA152x152.png",
+                  "sizes": "152x152",
+                  "type": "image/png"
+                }, {
+                  "src": "./icons/PWA192x192.png",
+                  "sizes": "192x192",
+                  "type": "image/png"
+                }, {
+                  "src": "./icons/PWA256x256.png",
+                  "sizes": "256x256",
+                  "type": "image/png"
+                }, {
+                  "src": "./icons/PWA512x512.png",
+                  "sizes": "512x512",
+                  "type": "image/png"
+                }],
+              "start_url": "pwa/index.html",
+              "display": "standalone",
+              "background_color": "#333",
+              "theme_color": "#333"
+            }
+          </code>
         </p>
       </main>
     </section>
