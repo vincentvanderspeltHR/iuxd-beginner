@@ -393,7 +393,7 @@
     <section data-aos="fade-right">
       <main role="main" style="text-align: left;" class="inner cover">
         <h3 class="cover-heading">Generic fallback</h3>
-        <p class="lead" style="padding-bottom: 1em;">
+        <p class="lead" style="padding-bottom: 5em;">
           The Generic fallback strategy is the easiest to implement, and has been implemented even before PWA's existed. A great example of seeing this 
           strategy in use is user avatars. When Facebook has no connection available and fails to retrieve a user's avatar, it show a basic avatar that is already in the cache. 
           This strategy is great for basic sites that just want to alert the user that there is no internet available without getting the ugly standard 'no internet available'.
@@ -404,7 +404,7 @@
     <section data-aos="fade-right">
       <main role="main" style="text-align: left;" class="inner cover">
         <h1 id="manifest" class="cover-heading" style="padding-bottom: .5em;">Web app manifest</h1>
-        <p class="lead" style="padding-bottom: 1em;">
+        <p class="lead" style="padding-bottom: 5em;">
           The web app manifest is a very basic JSON file that gives the browser information about your web application.
           The manifest also contains information on how the browser should behave when stuff gets installed on the user's device.
           Your web app having a manifest is mandatory if you want the Chrome browser to show the 'Add to homescreen' prompt.
@@ -451,8 +451,13 @@
     <section data-aos="fade-right">
       <main role="main" style="text-align: left;" class="inner cover">
         <h1 id="basic_offline" class="cover-heading" style="padding-bottom: .5em;">Basic offline</h1>
-        <p class="lead" style="padding-bottom: 1em;">
-          (insert info here)
+        <p class="lead" style="padding-bottom: 5em;">
+          As explained in the strategy section, basic offline is basically just telling the user to connect to the internet. 
+          It makes the experience a lot smoother for users then a 'No internet available' error message everytime their internet drops.
+          When implemented subtly, the user doesn't even notice there's no internet available until they get to a new page. 
+          The only thing needed for a basic offline experience is a single html page that the Service Worker stores in the cache.
+          When the Service Worker tries to make a request and there's no connection to the internet available, it just returns the html page
+          from the cache that you made. 
         </p>
       </main>
     </section>
@@ -460,8 +465,15 @@
     <section data-aos="fade-right">
       <main role="main" style="text-align: left;" class="inner cover">
         <h1 id="full_offline" class="cover-heading" style="padding-bottom: .5em;">Full offline</h1>
-        <p class="lead" style="padding-bottom: 1em;">
-          (insert info here)
+        <p class="lead" style="padding-bottom: 5em;">
+          A full offline experience is much harder to create then a basic offline experience. For a full offline experience, the entire site must be 
+          useable without connection to the internet. Some major problems you'll encounter are security and user collisions. 
+          You should provide a solution so users aren't bothered too much by not being able to log in with no internet, while not saving
+          user data in the cache on someone's device. If you do this and a user comes to your site on a public computer,
+          bypassers who have knowledge of Chrome DevTools could potentially just read your user's credentials from the cache.
+          The second problem is user collisions. If multiple users can for instance change a text post, the offline user has no way
+          of knowing if another user is altering the text at the same time. Once the offline user gets internet access again your web app 
+          should have some logic as to what to do with the text post. 
         </p>
       </main>
     </section>
@@ -470,7 +482,25 @@
       <main role="main" style="text-align: left;" class="inner cover">
         <h1 id="install_experience" class="cover-heading" style="padding-bottom: .5em;">Install experience</h1>
         <p class="lead" style="padding-bottom: 1em;">
-          (insert info here)
+          Since a PWA isn't installed through an app store, you should provide an install experience for your users yourself.
+          Luckily Google is pushing PWA's so on Chrome everything should go automatically as long as you fulfill criteria.
+        </p>
+        <p class="lead">
+          These criteria are:
+          <ul class="lead">
+            <li>
+              The web app is not already installed
+            </li>
+            <li>
+              A web app manifest that includes: a <code>short_name</code> or <code>name</code>, icons (at least 192px and 512px), <code>start_url</code>, <code>display</code> must be fullscreen, standalone or minimal-ui
+            </li>
+            <li>
+              Served over HTTPS
+            </li>
+            <li>
+              Has a registered Service Worker with a <code>fetch</code> event handler
+            </li>
+          </ul>
         </p>
       </main>
     </section>
