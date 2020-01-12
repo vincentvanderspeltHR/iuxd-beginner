@@ -366,14 +366,112 @@
     <section data-aos="fade-right">
       <main role="main" style="text-align: left;" class="inner cover">
         <h3 class="cover-heading">Network falling back to cache</h3>
-        <p class="lead" style="padding-bottom: 1em;">
-          This is the most commonly used strategy when it comes to an offline experience in your PWA. The Service Worker first tries to get 
-          data from the server through the internet. If this fails for some reason (for example, your connection drops)
-          the Service Worker immediately checks if something is available in the cache. If it is, it shows outdated content from
-          the cache. This strategy is on of the quickest and easiest to implement. The one downside of this strategy is that if a user
-          has a very slow connection, but is connected to the internet nonetheless, it won't show content out of the cache first and update
-          it at a later point in time. 
-        </p>
+        <div class="row">
+
+          <div class="col-6">
+            <p class="lead" style="padding-bottom: 1em;">
+              This is the most commonly used strategy when it comes to an offline experience in your PWA. The Service Worker first tries to get 
+              data from the server through the internet. If this fails for some reason (for example, your connection drops)
+              the Service Worker immediately checks if something is available in the cache. If it is, it shows outdated content from
+              the cache. This strategy is on of the quickest and easiest to implement. The one downside of this strategy is that if a user
+              has a very slow connection, but is connected to the internet nonetheless, it won't show content out of the cache first and update
+              it at a later point in time. 
+            </p>
+          </div>
+          
+          <div class="col-6">
+            <div class="diagram-container" style="padding-top: 25%; padding-bottom: 25%;">
+              <svg viewBox="0 0 549.92853 265">
+                <g transform="translate(-36.352 -120.593)">
+                  <text x="248.603" y="384.105" class="label">Service Worker</text>
+                  <text x="89.548" y="252.972" class="label">Page</text>
+                  <text x="537.439" y="383.491" class="label">Network</text>
+                  <text x="400.625" y="253.272" class="label">Cache</text>
+                  <use xlink:href="#diagram-sw" width="549.929" height="342.978" transform="translate(160.325 204.743)"></use>
+                  <use xlink:href="#diagram-network" width="549.929" height="342.978" transform="translate(455.439 210.129)">
+                  </use>
+                  <use xlink:href="#diagram-page" transform="translate(-31.309 48.726)" height="342.978" width="549.929">
+                  </use>
+                  <use xlink:href="#diagram-cache" transform="translate(323.347 80.91)" height="342.978" width="549.929">
+                  </use>
+      
+                  <g class="anim sequence">
+                    <g class="anim" data-time-padding="0.6" style="display: inline;">
+                      <g class="joiner" style="display: inline;">
+                        <path d="M125.228 217.424c-.572 41.786 20.007 74.986 60.648 75.56"
+                          style="stroke-dasharray: 109.124, 109.124; stroke-dashoffset: 0; transition: stroke-dashoffset 0.727496s ease-in-out 0s;">
+                        </path>
+                        <path d="M177.64 287.113l10.897 5.65-10.857 5.002"
+                          style="stroke-dasharray: 24.2285, 24.2285; stroke-dashoffset: 0; transition: stroke-dashoffset 0.161523s ease-in-out 0.827496s;">
+                        </path>
+                      </g>
+                      <text x="189.791" y="151.852" class="fade-in state-label"
+                        transform="translate(-33.772 202.062) translate(0 -90)"
+                        style="display: inline; opacity: 1; transition: opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;">
+                        1
+                      </text>
+                    </g>
+                    <g class="anim" data-time-padding="0.6" style="display: inline;">
+                      <g class="joiner" style="display: inline;">
+                        <path d="M305.727 320.923c63.06 22.954 117.92 22.76 182.588 6.315"
+                          style="stroke-dasharray: 185.788, 185.788; stroke-dashoffset: 0; transition: stroke-dashoffset 1.23859s ease-in-out 1.68902s;">
+                        </path>
+                        <path d="M477.033 324.593l15.393 1.14-11.972 9.692"
+                          style="stroke-dasharray: 30.8385, 30.8385; stroke-dashoffset: 0; transition: stroke-dashoffset 0.20559s ease-in-out 3.0276s;">
+                        </path>
+                      </g>
+                      <text x="215.445" y="131.329" class="fade-in state-label"
+                        transform="translate(-33.772 202.062) translate(219.43 -3.206)"
+                        style="display: inline; opacity: 1; transition: opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1.68902s;">
+                        2
+                      </text>
+                    </g>
+                    <g class="anim" data-time-padding="0.6" style="display: inline;">
+                      <g class="cross" style="display: inline;">
+                        <path d="M487.304 315.19l18.813 19.955"
+                          style="stroke-dasharray: 27.425, 27.425; stroke-dashoffset: 0; transition: stroke-dashoffset 0.182833s ease-in-out 3.93319s;">
+                        </path>
+                        <path d="M503.267 312.91l-14.252 23.375"
+                          style="stroke-dasharray: 27.3772, 27.3772; stroke-dashoffset: 0; transition: stroke-dashoffset 0.182515s ease-in-out 4.21603s;">
+                        </path>
+                      </g>
+                    </g>
+                    <g class="anim" data-time-padding="0.6" style="display: inline;">
+                      <g class="joiner" style="display: inline;">
+                        <path d="M306.297 294.13c53.367 3.57 53.5-42.803 58.308-70.08"
+                          style="stroke-dasharray: 104.613, 104.613; stroke-dashoffset: 0; transition: stroke-dashoffset 0.697419s ease-in-out 5.09854s;">
+                        </path>
+                        <path d="M358.1 231.7l6.902-10.108 3.593 12.025"
+                          style="stroke-dasharray: 24.79, 24.79; stroke-dashoffset: 0; transition: stroke-dashoffset 0.165266s ease-in-out 5.89596s;">
+                        </path>
+                      </g>
+                      <text class="fade-in state-label" y="91.993" x="145.324"
+                        transform="translate(-33.772 202.062) translate(220 -30)"
+                        style="display: inline; opacity: 1; transition: opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 5.09854s;">
+                        3
+                      </text>
+                    </g>
+                    <g class="anim" data-time-padding="0.6" style="display: inline;">
+                      <g class="joiner" style="display: inline;">
+                        <path d="M349.054 172.7c-48.11-26.075-154.585-24.56-198.804-3.377"
+                          style="stroke-dasharray: 203.563, 203.563; stroke-dashoffset: 0; transition: stroke-dashoffset 1.35708s ease-in-out 6.76123s;">
+                        </path>
+                        <path d="M156.36 160.117l-9.12 9.69 11.97 1.712"
+                          style="stroke-dasharray: 25.3986, 25.3986; stroke-dashoffset: 0; transition: stroke-dashoffset 0.169324s ease-in-out 8.21831s;">
+                        </path>
+                      </g>
+                      <text x="145.324" y="91.993" class="fade-in state-label"
+                        transform="translate(-33.772 202.062) translate(129.355 -98.981)"
+                        style="display: inline; opacity: 1; transition: opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 6.76123s;">
+                        4
+                      </text>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
       </main>
     </section>
 
@@ -510,96 +608,7 @@
       </main>
     </section>
 
-    <!-- <div class="diagram-container" style="padding-top: 15%; padding-bottom: 15%;">
-        <svg viewBox="0 0 549.92853 265">
-          <g transform="translate(-36.352 -120.593)">
-            <text x="248.603" y="384.105" class="label">Service Worker</text>
-            <text x="89.548" y="252.972" class="label">Page</text>
-            <text x="537.439" y="383.491" class="label">Network</text>
-            <text x="400.625" y="253.272" class="label">Cache</text>
-            <use xlink:href="#diagram-sw" width="549.929" height="342.978" transform="translate(160.325 204.743)"></use>
-            <use xlink:href="#diagram-network" width="549.929" height="342.978" transform="translate(455.439 210.129)">
-            </use>
-            <use xlink:href="#diagram-page" transform="translate(-31.309 48.726)" height="342.978" width="549.929">
-            </use>
-            <use xlink:href="#diagram-cache" transform="translate(323.347 80.91)" height="342.978" width="549.929">
-            </use>
-
-            <g class="anim sequence">
-              <g class="anim" data-time-padding="0.6" style="display: inline;">
-                <g class="joiner" style="display: inline;">
-                  <path d="M125.228 217.424c-.572 41.786 20.007 74.986 60.648 75.56"
-                    style="stroke-dasharray: 109.124, 109.124; stroke-dashoffset: 0; transition: stroke-dashoffset 0.727496s ease-in-out 0s;">
-                  </path>
-                  <path d="M177.64 287.113l10.897 5.65-10.857 5.002"
-                    style="stroke-dasharray: 24.2285, 24.2285; stroke-dashoffset: 0; transition: stroke-dashoffset 0.161523s ease-in-out 0.827496s;">
-                  </path>
-                </g>
-                <text x="189.791" y="151.852" class="fade-in state-label"
-                  transform="translate(-33.772 202.062) translate(0 -90)"
-                  style="display: inline; opacity: 1; transition: opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;">
-                  1
-                </text>
-              </g>
-              <g class="anim" data-time-padding="0.6" style="display: inline;">
-                <g class="joiner" style="display: inline;">
-                  <path d="M305.727 320.923c63.06 22.954 117.92 22.76 182.588 6.315"
-                    style="stroke-dasharray: 185.788, 185.788; stroke-dashoffset: 0; transition: stroke-dashoffset 1.23859s ease-in-out 1.68902s;">
-                  </path>
-                  <path d="M477.033 324.593l15.393 1.14-11.972 9.692"
-                    style="stroke-dasharray: 30.8385, 30.8385; stroke-dashoffset: 0; transition: stroke-dashoffset 0.20559s ease-in-out 3.0276s;">
-                  </path>
-                </g>
-                <text x="215.445" y="131.329" class="fade-in state-label"
-                  transform="translate(-33.772 202.062) translate(219.43 -3.206)"
-                  style="display: inline; opacity: 1; transition: opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1.68902s;">
-                  2
-                </text>
-              </g>
-              <g class="anim" data-time-padding="0.6" style="display: inline;">
-                <g class="cross" style="display: inline;">
-                  <path d="M487.304 315.19l18.813 19.955"
-                    style="stroke-dasharray: 27.425, 27.425; stroke-dashoffset: 0; transition: stroke-dashoffset 0.182833s ease-in-out 3.93319s;">
-                  </path>
-                  <path d="M503.267 312.91l-14.252 23.375"
-                    style="stroke-dasharray: 27.3772, 27.3772; stroke-dashoffset: 0; transition: stroke-dashoffset 0.182515s ease-in-out 4.21603s;">
-                  </path>
-                </g>
-              </g>
-              <g class="anim" data-time-padding="0.6" style="display: inline;">
-                <g class="joiner" style="display: inline;">
-                  <path d="M306.297 294.13c53.367 3.57 53.5-42.803 58.308-70.08"
-                    style="stroke-dasharray: 104.613, 104.613; stroke-dashoffset: 0; transition: stroke-dashoffset 0.697419s ease-in-out 5.09854s;">
-                  </path>
-                  <path d="M358.1 231.7l6.902-10.108 3.593 12.025"
-                    style="stroke-dasharray: 24.79, 24.79; stroke-dashoffset: 0; transition: stroke-dashoffset 0.165266s ease-in-out 5.89596s;">
-                  </path>
-                </g>
-                <text class="fade-in state-label" y="91.993" x="145.324"
-                  transform="translate(-33.772 202.062) translate(220 -30)"
-                  style="display: inline; opacity: 1; transition: opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 5.09854s;">
-                  3
-                </text>
-              </g>
-              <g class="anim" data-time-padding="0.6" style="display: inline;">
-                <g class="joiner" style="display: inline;">
-                  <path d="M349.054 172.7c-48.11-26.075-154.585-24.56-198.804-3.377"
-                    style="stroke-dasharray: 203.563, 203.563; stroke-dashoffset: 0; transition: stroke-dashoffset 1.35708s ease-in-out 6.76123s;">
-                  </path>
-                  <path d="M156.36 160.117l-9.12 9.69 11.97 1.712"
-                    style="stroke-dasharray: 25.3986, 25.3986; stroke-dashoffset: 0; transition: stroke-dashoffset 0.169324s ease-in-out 8.21831s;">
-                  </path>
-                </g>
-                <text x="145.324" y="91.993" class="fade-in state-label"
-                  transform="translate(-33.772 202.062) translate(129.355 -98.981)"
-                  style="display: inline; opacity: 1; transition: opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 6.76123s;">
-                  4
-                </text>
-              </g>
-            </g>
-          </g>
-        </svg>
-      </div> -->
+    
 
     </main>
 
