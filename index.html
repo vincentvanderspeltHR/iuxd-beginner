@@ -17,7 +17,7 @@
   <link href="./cover.css" rel="stylesheet">
 
   <!-- Animate on scroll -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="./aos.css" rel="stylesheet">
 
   <!-- Manifest -->
   <link rel="manifest" href="./manifest.json">
@@ -44,65 +44,100 @@
         <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link" onClick="document.getElementById('what_is_it').scrollIntoView();">What_Is_It</a>
           <a class="nav-link" onClick="document.getElementById('how_it_works').scrollIntoView();">How_It_Works</a>
+          <a class="nav-link" onClick="document.getElementById('pwa_strategies').scrollIntoView();">PWA_Strategies</a>
           <a class="nav-link" onClick="document.getElementById('manifest').scrollIntoView();">Manifest</a>
           <a class="nav-link" onClick="document.getElementById('basic_offline').scrollIntoView();">Basic_Offline</a>
           <a class="nav-link" onClick="document.getElementById('full_offline').scrollIntoView();">Full_Offline</a>
-          <a class="nav-link" onClick="document.getElementById('install_experience').scrollIntoView();">Install_Experience</a>
+          <a class="nav-link"
+            onClick="document.getElementById('install_experience').scrollIntoView();">Install_Experience</a>
         </nav>
       </div>
     </header>
 
-    <main role="main" style="padding-top: 25%; padding-bottom: 20%; text-align: left;" class="inner cover">
-      <h1 class="cover-heading" data-aos="fade-right">Introduction</h1>
-      <p class="lead" data-aos="fade-right">
-        Progressive Web Apps are web applications that act as native apps for mobile or pc.
-        This means that you can utilize native features such as camera, push notifications and offline use.
-        On this page we’re going to explain exactly what a Progressive Web App (PWA from now on)
-        is and the advantages of having a PWA.</p>
-    </main>
+    <svg class="diagram-defs">
+      <defs>
+        <path
+          d="M105.74 133.947l-12.07-5.73c-1.36-.644-2.184-1.647-2.184-3.043v-.358c0-1.396.823-2.4 2.184-3.044l12.07-5.73c.427-.214.82-.357 1.324-.357 1.146-.035 2.184.967 2.184 2.256 0 1.04-.573 1.76-1.504 2.19l-10.814 4.83 10.814 4.834c.93.43 1.504 1.253 1.504 2.256 0 1.325-1.038 2.256-2.365 2.22-.392 0-.786-.143-1.144-.323zm6.803 5.373l14.002-29.257c.394-.823 1.038-1.253 1.898-1.253 1.146 0 2.112.967 2.112 2.04 0 .395-.143.79-.25 1.04l-14.002 29.255c-.394.823-1.038 1.253-1.898 1.253-1.146 0-2.112-.966-2.112-2.04 0-.395.142-.788.25-1.04zm25.067-23.277l12.067 5.73c1.36.644 2.184 1.647 2.184 3.043v.358c0 1.396-.82 2.4-2.18 3.043l-12.07 5.73c-.43.215-.82.358-1.323.358-1.146.035-2.184-.967-2.184-2.256 0-1.04.574-1.76 1.505-2.19l10.814-4.834-10.814-4.835c-.93-.43-1.504-1.252-1.504-2.255 0-1.326 1.04-2.257 2.365-2.22.392 0 .786.143 1.144.322zm31.91-27.436c0-1.866-1.513-3.377-3.38-3.377H76.08c-1.865 0-3.377 1.51-3.377 3.377v66.42c0 1.865 1.512 3.377 3.377 3.377h90.06c1.867 0 3.38-1.512 3.38-3.377v-66.42zm-74.865-.188c1.347 0 2.44 1.09 2.44 2.434s-1.092 2.44-2.44 2.44c-1.347 0-2.44-1.092-2.44-2.44 0-1.347 1.094-2.44 2.44-2.44zm-6.754 0c1.35 0 2.44 1.09 2.44 2.434s-1.09 2.44-2.44 2.44c-1.343 0-2.44-1.092-2.44-2.44 0-1.347 1.098-2.44 2.44-2.44zm-6.75 0c1.347 0 2.44 1.09 2.44 2.434s-1.092 2.44-2.44 2.44c-1.347 0-2.44-1.092-2.44-2.44 0-1.347 1.094-2.44 2.44-2.44zm83.87 65.48H77.21V97.61h87.81v56.29z"
+          id="diagram-page" />
+        <path
+          d="M82.687 42.615c-2.388 0-4.733.18-7.023.53l-.2-.09c-.02.044-.034.09-.054.13-22.133 3.493-39.058 22.648-39.058 45.76 0 25.59 20.744 46.334 46.334 46.334 25.588 0 46.333-20.748 46.333-46.338 0-25.587-20.748-46.33-46.337-46.33zm-9.65 51.123c-.73-.364-1.508-.646-2.328-.818.06-5.917.52-11.804 1.384-17.586 2.722-.564 5.02-2.27 6.397-4.586 6.643 1.918 13.024 4.942 19.025 8.934-.155.473-.27.964-.35 1.465-8.557 2.602-16.684 6.85-24.132 12.59zM63.51 110.73c.83.522 1.744.92 2.72 1.174.694 5.234 1.7 10.388 3.016 15.44-4.677-1.643-8.967-4.114-12.688-7.24 2.177-3.334 4.502-6.46 6.95-9.374zm52.983-26.94c.295-.004.59-.016.885-.016 1.898 0 3.8.117 5.694.288.193 1.603.303 3.232.303 4.886 0 2.454-.23 4.854-.65 7.19-2.327-3.115-4.784-6.04-7.36-8.753.595-1.09.986-2.304 1.128-3.595zm5.457-5.498c-1.524-.102-3.05-.162-4.572-.162-.652 0-1.303.017-1.952.035-1.637-3.098-4.887-5.212-8.632-5.212-2.27 0-4.356.784-6.014 2.085-6.582-4.397-13.615-7.698-20.942-9.784-.158-2.962-1.63-5.567-3.85-7.25.987-3.267 2.103-6.473 3.358-9.595 1.103-.09 2.215-.15 3.34-.15 18.75 0 34.568 12.75 39.264 30.03zM72.895 49.458c-.797 2.164-1.534 4.363-2.213 6.59-.193-.012-.382-.03-.578-.03-4.28 0-7.907 2.757-9.224 6.59-3.272.002-6.54.26-9.782.73 5.488-6.755 13.093-11.72 21.797-13.88zm-30.897 39.49c0-6.878 1.72-13.36 4.745-19.044 4.578-1.056 9.248-1.624 13.93-1.644.787 3 2.958 5.434 5.797 6.575-.9 6.113-1.376 12.333-1.414 18.582-3.59 1.44-6.126 4.95-6.126 9.054 0 1.406.302 2.738.834 3.94-2.584 3.02-5.03 6.26-7.335 9.71-6.48-7.21-10.436-16.734-10.436-27.17zm40.69 40.688c-2.436 0-4.817-.227-7.136-.64-1.63-5.636-2.852-11.42-3.66-17.315 3.817-1.32 6.56-4.94 6.56-9.21 0-1.74-.46-3.37-1.26-4.783 6.46-4.862 13.437-8.518 20.757-10.858 1.55 3.332 4.92 5.65 8.84 5.65 1.63 0 3.16-.407 4.512-1.114 3.386 3.572 6.56 7.524 9.485 11.836-5.787 15.426-20.68 26.438-38.104 26.438z"
+          id="diagram-network" />
+        <path
+          d="M66.496 72.76h41.74v41.74h-41.74V72.76zm69.566 0c1.275 0 2.318-1.04 2.318-2.32 0-1.28-1.043-2.318-2.318-2.318h-9.276v-4.638h9.276c1.275 0 2.318-1.038 2.318-2.318s-1.043-2.32-2.318-2.32h-9.276V56.53c0-1.28-1.043-2.32-2.32-2.32h-2.317v-9.274c0-1.28-1.05-2.32-2.32-2.32-1.28 0-2.32 1.04-2.32 2.32v9.275h-4.64V44.94c0-1.28-1.044-2.32-2.32-2.32-1.275 0-2.318 1.04-2.318 2.32v9.275h-4.638v-9.275c0-1.28-1.044-2.32-2.32-2.32-1.274 0-2.318 1.04-2.318 2.32v9.275H94.32v-9.277c0-1.28-1.044-2.32-2.32-2.32-1.275 0-2.318 1.04-2.318 2.32v9.275h-4.638v-9.275c0-1.28-1.04-2.32-2.32-2.32-1.28 0-2.318 1.04-2.318 2.32v9.275H75.77v-9.28c0-1.28-1.04-2.32-2.32-2.32-1.28 0-2.318 1.04-2.318 2.32v9.276h-4.638V44.93c0-1.28-1.038-2.32-2.318-2.32s-2.32 1.04-2.32 2.32v9.275H57.22V44.93c0-1.28-1.04-2.32-2.32-2.32s-2.32 1.04-2.32 2.32v9.274h-2.316c-1.28 0-2.32 1.038-2.32 2.318v2.32H38.67c-1.28 0-2.318 1.038-2.318 2.318s1.038 2.318 2.318 2.318h9.276v4.638H38.67c-1.28 0-2.318 1.04-2.318 2.32 0 1.28 1.038 2.318 2.318 2.318h9.276v4.637H38.67c-1.28 0-2.318 1.04-2.318 2.32 0 1.28 1.038 2.32 2.318 2.32h9.276v4.64H38.67c-1.28 0-2.318 1.04-2.318 2.32 0 1.28 1.038 2.317 2.318 2.317h9.276v4.638H38.67c-1.28 0-2.318 1.044-2.318 2.32 0 1.274 1.038 2.318 2.318 2.318h9.276v4.638H38.67c-1.28 0-2.318 1.045-2.318 2.32 0 1.276 1.038 2.32 2.318 2.32h9.276v4.64H38.67c-1.28 0-2.318 1.04-2.318 2.317 0 1.275 1.038 2.318 2.318 2.318h9.276v4.64H38.67c-1.28 0-2.318 1.043-2.318 2.32 0 1.273 1.038 2.317 2.318 2.317h9.276v2.32c0 1.274 1.04 2.318 2.32 2.318h2.317v9.275c0 1.275 1.04 2.32 2.32 2.32 1.28 0 2.318-1.045 2.318-2.32v-9.275h4.64v9.275c0 1.275 1.04 2.32 2.32 2.32s2.32-1.045 2.32-2.32v-9.275h4.638v9.275c0 1.275 1.04 2.32 2.32 2.32 1.28 0 2.318-1.045 2.318-2.32v-9.275h4.637v9.275c0 1.275 1.04 2.32 2.32 2.32s2.32-1.045 2.32-2.32v-9.275h4.636v9.275c0 1.275 1.042 2.32 2.32 2.32 1.273 0 2.317-1.045 2.317-2.32v-9.275h4.637v9.275c0 1.275 1.045 2.32 2.32 2.32s2.32-1.045 2.32-2.32v-9.275h4.637v9.275c0 1.275 1.044 2.32 2.32 2.32 1.275 0 2.32-1.045 2.32-2.32v-9.275h4.636v9.275c0 1.275 1.045 2.32 2.32 2.32 1.276 0 2.32-1.045 2.32-2.32v-9.275h2.318c1.276 0 2.32-1.044 2.32-2.32v-2.318h9.275c1.274 0 2.317-1.045 2.317-2.32s-1.042-2.32-2.317-2.32h-9.277v-4.64h9.276c1.273 0 2.316-1.04 2.316-2.316 0-1.276-1.042-2.32-2.317-2.32h-9.277v-4.637h9.277c1.276 0 2.32-1.043 2.32-2.32s-1.043-2.32-2.318-2.32h-9.276v-4.637h9.276c1.275 0 2.318-1.044 2.318-2.32 0-1.274-1.042-2.318-2.317-2.318h-9.277V91.31h9.276c1.274 0 2.317-1.038 2.317-2.318s-1.044-2.32-2.32-2.32h-9.275v-4.637h9.276c1.276 0 2.32-1.04 2.32-2.32 0-1.28-1.043-2.318-2.318-2.318h-9.275V72.76h9.276zm-23.19 44.058c0 1.275-1.042 2.318-2.318 2.318H64.178c-1.28 0-2.32-1.043-2.32-2.318V70.44c0-1.28 1.04-2.318 2.32-2.318h46.376c1.276 0 2.32 1.04 2.32 2.32v46.376z"
+          id="diagram-sw" />
+        <path
+          d="M114.31 61.395L98.25 45.298c-1.713-1.717-4.04-2.683-6.465-2.683h-46.3c-5.044 0-9.133 4.09-9.133 9.133v72.49c0 5.044 4.09 9.133 9.132 9.133h62.36c5.043 0 9.133-4.084 9.133-9.13V67.848c-.002-2.418-.96-4.737-2.667-6.45zm-6.467 62.844h-62.36V51.743h46.303l16.058 16.098v56.393zM54.875 55.475c-2.522 0-4.566 2.045-4.566 4.566V72.03c0 2.522 2.04 4.567 4.56 4.567 2.523 0 4.567-2.045 4.567-4.567V60.043c0-2.52-2.044-4.566-4.566-4.566zm13.89 0c-2.522 0-4.567 2.045-4.567 4.566V72.03c0 2.522 2.045 4.567 4.567 4.567 2.522 0 4.566-2.045 4.566-4.567V60.043c0-2.52-2.04-4.566-4.56-4.566zm13.888 0c-2.52 0-4.566 2.045-4.566 4.566V72.03c0 2.522 2.045 4.567 4.566 4.567 2.522 0 4.567-2.045 4.567-4.567V60.043c0-2.52-2.045-4.566-4.567-4.566zm13.89 21.12c2.522 0 4.567-2.044 4.567-4.566v-3.99c0-2.522-2.045-4.567-4.567-4.567-2.522 0-4.566 2.045-4.566 4.567v3.995c0 2.524 2.044 4.57 4.566 4.57z"
+          id="diagram-cache" />
+        <path
+          d="M36.352 68.593v55.405c0 7.533 6.1 13.633 13.627 13.633h64.15c7.532 0 13.64-6.094 13.64-13.63V68.595c0-7.523-6.107-13.626-13.64-13.626h-2.796v-8.202c0-2.293-1.86-4.15-4.15-4.15s-4.155 1.857-4.155 4.15v16.7c0 2.05-1.657 3.705-3.703 3.705-2.037 0-3.687-1.656-3.687-3.704v-8.5h-7.19v-8.2c0-2.294-1.86-4.15-4.15-4.15-2.3 0-4.15 1.856-4.15 4.15v16.7c0 2.048-1.65 3.704-3.703 3.704-2.037 0-3.688-1.658-3.688-3.706v-8.5h-7.1v-8.2c0-2.294-1.865-4.15-4.15-4.15-2.3 0-4.156 1.856-4.156 4.15v16.7c0 2.048-1.652 3.704-3.7 3.704-2.042 0-3.693-1.657-3.693-3.705v-8.5c-7.515.01-13.61 6.105-13.61 13.627zm81.503 53.72c0 2.425-1.966 4.39-4.39 4.39h-62.23c-2.424 0-4.395-1.965-4.395-4.39v-35.72h71.015v35.723zm-4.947-29.247v5.54h-3.218v22.145h-5.42V98.61h-3.207v-5.54h11.845m-13.08 0v27.685h-4.752l-2.82-12.585v12.586h-4.53v-27.69h4.53l3.04 12.467V93.066h4.53m-23.07 0h9.037v5.54h-3.618v5.25h3.387v5.267h-3.387v6.087h3.98v5.54h-9.4V93.067m-.927 0l-2.755 27.685h-8.228l-3.128-27.684h5.716c.66 7.626 1.133 14.073 1.417 19.34.283-5.324.58-10.055.888-14.193l.373-5.147h5.72m-23.843 0h9.04v5.54h-3.62v5.25h3.387v5.267H57.41v6.087h3.977v5.54h-9.4V93.067"
+          id="diagram-event" />
+      </defs>
+    </svg>
 
-    <main role="main" style="text-align: left;" class="inner cover">
-      <h1 class="cover-heading" id="what_is_it" data-aos="fade-right">What is a Progressive Web App?</h1>
-      <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
-        PWA’s are installable unlike other web applications.
-        Because of this and with the use of manifests PWA’s provide an app-like experience on desktop and mobile.
-        They do this without losing the advantages of being web apps, so you’re able to reach them on any browser
-        through the web.
-        Because of the use of Service Workers (a form of JavaScript workers) they become much faster and very reliable.
-      </p>
-      <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
-        PWA’s are fast because they load meaningful content and interactivity on screen much quicker than other web
-        apps.
-        You also don’t have to go through the app store to install it, you can install it smoothly straight from the
-        web.
-        This adds a lot to the overall smooth experience of PWA’s, as installing an app through the app store takes
-        longer and requires more effort from users.
-        As a result, users usually don’t install normal apps as quickly because of all the hassle.
-      </p>
-      <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
-        A good tool to check if a webapp is progressive is <a href="https://developers.google.com/web/tools/lighthouse"
-          style="color: rgb(120, 190, 255);">Lighthouse</a>.
-        Lighthouse is baked into the Chrome DevTools if you press F12 inside Google Chrome.
-        Some good examples of PWA’s are this <a href="https://wiki-offline.jakearchibald.com/ "
-          style="color: rgb(120, 190, 255);">Offline-Wiki</a>,
-        this <a href="https://pokedex.org/" style="color: rgb(120, 190, 255);">Pokédex</a>
-        and a simple <a href="https://airhorner.com/" style="color: rgb(120, 190, 255);">Airhorner</a>.
-      </p>
-      <h3 class="cover-heading" data-aos="fade-right">Advantages of a PWA</h1>
-        <ul class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
+    <section data-aos="fade-right">
+      <main role="main" style="padding-top: 25%; padding-bottom: 20%; text-align: left;" class="inner cover">
+        <h1 class="cover-heading">Introduction</h1>
+        <p class="lead">
+          Progressive Web Apps are web applications that act as native apps for mobile or pc.
+          This means that you can utilize native features such as camera, push notifications and offline use.
+          On this page we’re going to explain exactly what a Progressive Web App (PWA from now on)
+          is and the advantages of having a PWA.</p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h1 class="cover-heading" id="what_is_it">What is a Progressive Web App?</h1>
+        <p class="lead" style="padding-bottom: 1em;">
+          PWA’s are installable unlike other web applications.
+          Because of this and with the use of manifests PWA’s provide an app-like experience on desktop and mobile.
+          They do this without losing the advantages of being web apps, so you’re able to reach them on any browser
+          through the web.
+          Because of the use of Service Workers (a form of JavaScript workers) they become much faster and very
+          reliable.
+        </p>
+        <p class="lead" style="padding-bottom: 1em;">
+          PWA’s are fast because they load meaningful content and interactivity on screen much quicker than other web
+          apps.
+          You also don’t have to go through the app store to install it, you can install it smoothly straight from the
+          web.
+          This adds a lot to the overall smooth experience of PWA’s, as installing an app through the app store takes
+          longer and requires more effort from users.
+          As a result, users usually don’t install normal apps as quickly because of all the hassle.
+        </p>
+        <p class="lead" style="padding-bottom: 1em;">
+          A good tool to check if a webapp is progressive is <a
+            href="https://developers.google.com/web/tools/lighthouse" style="color: rgb(120, 190, 255);">Lighthouse</a>.
+          Lighthouse is baked into the Chrome DevTools if you press F12 inside Google Chrome.
+          Some good examples of PWA’s are this <a href="https://wiki-offline.jakearchibald.com/ "
+            style="color: rgb(120, 190, 255);">Offline-Wiki</a>,
+          this <a href="https://pokedex.org/" style="color: rgb(120, 190, 255);">Pokédex</a>
+          and a simple <a href="https://airhorner.com/" style="color: rgb(120, 190, 255);">Airhorner</a>.
+        </p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">Advantages of a PWA</h3>
+        <ul class="lead" style="padding-bottom: 1em;">
           <li><span style="color: rgb(145, 255, 120);">Native</span> app features</li>
           <li><span style="color: rgb(145, 255, 120);">Installable</span> on PC and mobile</li>
           <li><span style="color: rgb(145, 255, 120);">Push notifications</span> can be used</li>
           <li><span style="color: rgb(145, 255, 120);">Fast</span> loading speeds</li>
           <li><span style="color: rgb(145, 255, 120);">Background Synchronization</span> for updating data</li>
         </ul>
-        <p class="lead" style="padding-bottom: 5em;" data-aos="fade-right">
+        <p class="lead" style="padding-bottom: 5em;">
           Progressive Web apps are also not very hard to make, and are being pushed by Google.
           Google believes PWA’s are potentially the future of apps as a whole.
         </p>
+      </main>
+    </section>
 
-        <h1 class="cover-heading" id="how_it_works" data-aos="fade-right">How it works</h1>
-        <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h1 class="cover-heading" id="how_it_works">How it works</h1>
+        <p class="lead" style="padding-bottom: 1em;">
           The main work of a PWA is being done by a JavaScript worker called the Service Worker.
           The Service Worker is a script that can be run in the background by your browser, separate from your web page.
           This enables a lot of features PWA’s bring to the table.
@@ -110,48 +145,33 @@
           the app logic.
         </p>
 
-        <svg class="diagram-defs">
-          <defs>
-            <path
-              d="M105.74 133.947l-12.07-5.73c-1.36-.644-2.184-1.647-2.184-3.043v-.358c0-1.396.823-2.4 2.184-3.044l12.07-5.73c.427-.214.82-.357 1.324-.357 1.146-.035 2.184.967 2.184 2.256 0 1.04-.573 1.76-1.504 2.19l-10.814 4.83 10.814 4.834c.93.43 1.504 1.253 1.504 2.256 0 1.325-1.038 2.256-2.365 2.22-.392 0-.786-.143-1.144-.323zm6.803 5.373l14.002-29.257c.394-.823 1.038-1.253 1.898-1.253 1.146 0 2.112.967 2.112 2.04 0 .395-.143.79-.25 1.04l-14.002 29.255c-.394.823-1.038 1.253-1.898 1.253-1.146 0-2.112-.966-2.112-2.04 0-.395.142-.788.25-1.04zm25.067-23.277l12.067 5.73c1.36.644 2.184 1.647 2.184 3.043v.358c0 1.396-.82 2.4-2.18 3.043l-12.07 5.73c-.43.215-.82.358-1.323.358-1.146.035-2.184-.967-2.184-2.256 0-1.04.574-1.76 1.505-2.19l10.814-4.834-10.814-4.835c-.93-.43-1.504-1.252-1.504-2.255 0-1.326 1.04-2.257 2.365-2.22.392 0 .786.143 1.144.322zm31.91-27.436c0-1.866-1.513-3.377-3.38-3.377H76.08c-1.865 0-3.377 1.51-3.377 3.377v66.42c0 1.865 1.512 3.377 3.377 3.377h90.06c1.867 0 3.38-1.512 3.38-3.377v-66.42zm-74.865-.188c1.347 0 2.44 1.09 2.44 2.434s-1.092 2.44-2.44 2.44c-1.347 0-2.44-1.092-2.44-2.44 0-1.347 1.094-2.44 2.44-2.44zm-6.754 0c1.35 0 2.44 1.09 2.44 2.434s-1.09 2.44-2.44 2.44c-1.343 0-2.44-1.092-2.44-2.44 0-1.347 1.098-2.44 2.44-2.44zm-6.75 0c1.347 0 2.44 1.09 2.44 2.434s-1.092 2.44-2.44 2.44c-1.347 0-2.44-1.092-2.44-2.44 0-1.347 1.094-2.44 2.44-2.44zm83.87 65.48H77.21V97.61h87.81v56.29z"
-              id="diagram-page" />
-            <path
-              d="M82.687 42.615c-2.388 0-4.733.18-7.023.53l-.2-.09c-.02.044-.034.09-.054.13-22.133 3.493-39.058 22.648-39.058 45.76 0 25.59 20.744 46.334 46.334 46.334 25.588 0 46.333-20.748 46.333-46.338 0-25.587-20.748-46.33-46.337-46.33zm-9.65 51.123c-.73-.364-1.508-.646-2.328-.818.06-5.917.52-11.804 1.384-17.586 2.722-.564 5.02-2.27 6.397-4.586 6.643 1.918 13.024 4.942 19.025 8.934-.155.473-.27.964-.35 1.465-8.557 2.602-16.684 6.85-24.132 12.59zM63.51 110.73c.83.522 1.744.92 2.72 1.174.694 5.234 1.7 10.388 3.016 15.44-4.677-1.643-8.967-4.114-12.688-7.24 2.177-3.334 4.502-6.46 6.95-9.374zm52.983-26.94c.295-.004.59-.016.885-.016 1.898 0 3.8.117 5.694.288.193 1.603.303 3.232.303 4.886 0 2.454-.23 4.854-.65 7.19-2.327-3.115-4.784-6.04-7.36-8.753.595-1.09.986-2.304 1.128-3.595zm5.457-5.498c-1.524-.102-3.05-.162-4.572-.162-.652 0-1.303.017-1.952.035-1.637-3.098-4.887-5.212-8.632-5.212-2.27 0-4.356.784-6.014 2.085-6.582-4.397-13.615-7.698-20.942-9.784-.158-2.962-1.63-5.567-3.85-7.25.987-3.267 2.103-6.473 3.358-9.595 1.103-.09 2.215-.15 3.34-.15 18.75 0 34.568 12.75 39.264 30.03zM72.895 49.458c-.797 2.164-1.534 4.363-2.213 6.59-.193-.012-.382-.03-.578-.03-4.28 0-7.907 2.757-9.224 6.59-3.272.002-6.54.26-9.782.73 5.488-6.755 13.093-11.72 21.797-13.88zm-30.897 39.49c0-6.878 1.72-13.36 4.745-19.044 4.578-1.056 9.248-1.624 13.93-1.644.787 3 2.958 5.434 5.797 6.575-.9 6.113-1.376 12.333-1.414 18.582-3.59 1.44-6.126 4.95-6.126 9.054 0 1.406.302 2.738.834 3.94-2.584 3.02-5.03 6.26-7.335 9.71-6.48-7.21-10.436-16.734-10.436-27.17zm40.69 40.688c-2.436 0-4.817-.227-7.136-.64-1.63-5.636-2.852-11.42-3.66-17.315 3.817-1.32 6.56-4.94 6.56-9.21 0-1.74-.46-3.37-1.26-4.783 6.46-4.862 13.437-8.518 20.757-10.858 1.55 3.332 4.92 5.65 8.84 5.65 1.63 0 3.16-.407 4.512-1.114 3.386 3.572 6.56 7.524 9.485 11.836-5.787 15.426-20.68 26.438-38.104 26.438z"
-              id="diagram-network" />
-            <path
-              d="M66.496 72.76h41.74v41.74h-41.74V72.76zm69.566 0c1.275 0 2.318-1.04 2.318-2.32 0-1.28-1.043-2.318-2.318-2.318h-9.276v-4.638h9.276c1.275 0 2.318-1.038 2.318-2.318s-1.043-2.32-2.318-2.32h-9.276V56.53c0-1.28-1.043-2.32-2.32-2.32h-2.317v-9.274c0-1.28-1.05-2.32-2.32-2.32-1.28 0-2.32 1.04-2.32 2.32v9.275h-4.64V44.94c0-1.28-1.044-2.32-2.32-2.32-1.275 0-2.318 1.04-2.318 2.32v9.275h-4.638v-9.275c0-1.28-1.044-2.32-2.32-2.32-1.274 0-2.318 1.04-2.318 2.32v9.275H94.32v-9.277c0-1.28-1.044-2.32-2.32-2.32-1.275 0-2.318 1.04-2.318 2.32v9.275h-4.638v-9.275c0-1.28-1.04-2.32-2.32-2.32-1.28 0-2.318 1.04-2.318 2.32v9.275H75.77v-9.28c0-1.28-1.04-2.32-2.32-2.32-1.28 0-2.318 1.04-2.318 2.32v9.276h-4.638V44.93c0-1.28-1.038-2.32-2.318-2.32s-2.32 1.04-2.32 2.32v9.275H57.22V44.93c0-1.28-1.04-2.32-2.32-2.32s-2.32 1.04-2.32 2.32v9.274h-2.316c-1.28 0-2.32 1.038-2.32 2.318v2.32H38.67c-1.28 0-2.318 1.038-2.318 2.318s1.038 2.318 2.318 2.318h9.276v4.638H38.67c-1.28 0-2.318 1.04-2.318 2.32 0 1.28 1.038 2.318 2.318 2.318h9.276v4.637H38.67c-1.28 0-2.318 1.04-2.318 2.32 0 1.28 1.038 2.32 2.318 2.32h9.276v4.64H38.67c-1.28 0-2.318 1.04-2.318 2.32 0 1.28 1.038 2.317 2.318 2.317h9.276v4.638H38.67c-1.28 0-2.318 1.044-2.318 2.32 0 1.274 1.038 2.318 2.318 2.318h9.276v4.638H38.67c-1.28 0-2.318 1.045-2.318 2.32 0 1.276 1.038 2.32 2.318 2.32h9.276v4.64H38.67c-1.28 0-2.318 1.04-2.318 2.317 0 1.275 1.038 2.318 2.318 2.318h9.276v4.64H38.67c-1.28 0-2.318 1.043-2.318 2.32 0 1.273 1.038 2.317 2.318 2.317h9.276v2.32c0 1.274 1.04 2.318 2.32 2.318h2.317v9.275c0 1.275 1.04 2.32 2.32 2.32 1.28 0 2.318-1.045 2.318-2.32v-9.275h4.64v9.275c0 1.275 1.04 2.32 2.32 2.32s2.32-1.045 2.32-2.32v-9.275h4.638v9.275c0 1.275 1.04 2.32 2.32 2.32 1.28 0 2.318-1.045 2.318-2.32v-9.275h4.637v9.275c0 1.275 1.04 2.32 2.32 2.32s2.32-1.045 2.32-2.32v-9.275h4.636v9.275c0 1.275 1.042 2.32 2.32 2.32 1.273 0 2.317-1.045 2.317-2.32v-9.275h4.637v9.275c0 1.275 1.045 2.32 2.32 2.32s2.32-1.045 2.32-2.32v-9.275h4.637v9.275c0 1.275 1.044 2.32 2.32 2.32 1.275 0 2.32-1.045 2.32-2.32v-9.275h4.636v9.275c0 1.275 1.045 2.32 2.32 2.32 1.276 0 2.32-1.045 2.32-2.32v-9.275h2.318c1.276 0 2.32-1.044 2.32-2.32v-2.318h9.275c1.274 0 2.317-1.045 2.317-2.32s-1.042-2.32-2.317-2.32h-9.277v-4.64h9.276c1.273 0 2.316-1.04 2.316-2.316 0-1.276-1.042-2.32-2.317-2.32h-9.277v-4.637h9.277c1.276 0 2.32-1.043 2.32-2.32s-1.043-2.32-2.318-2.32h-9.276v-4.637h9.276c1.275 0 2.318-1.044 2.318-2.32 0-1.274-1.042-2.318-2.317-2.318h-9.277V91.31h9.276c1.274 0 2.317-1.038 2.317-2.318s-1.044-2.32-2.32-2.32h-9.275v-4.637h9.276c1.276 0 2.32-1.04 2.32-2.32 0-1.28-1.043-2.318-2.318-2.318h-9.275V72.76h9.276zm-23.19 44.058c0 1.275-1.042 2.318-2.318 2.318H64.178c-1.28 0-2.32-1.043-2.32-2.318V70.44c0-1.28 1.04-2.318 2.32-2.318h46.376c1.276 0 2.32 1.04 2.32 2.32v46.376z"
-              id="diagram-sw" />
-            <path
-              d="M114.31 61.395L98.25 45.298c-1.713-1.717-4.04-2.683-6.465-2.683h-46.3c-5.044 0-9.133 4.09-9.133 9.133v72.49c0 5.044 4.09 9.133 9.132 9.133h62.36c5.043 0 9.133-4.084 9.133-9.13V67.848c-.002-2.418-.96-4.737-2.667-6.45zm-6.467 62.844h-62.36V51.743h46.303l16.058 16.098v56.393zM54.875 55.475c-2.522 0-4.566 2.045-4.566 4.566V72.03c0 2.522 2.04 4.567 4.56 4.567 2.523 0 4.567-2.045 4.567-4.567V60.043c0-2.52-2.044-4.566-4.566-4.566zm13.89 0c-2.522 0-4.567 2.045-4.567 4.566V72.03c0 2.522 2.045 4.567 4.567 4.567 2.522 0 4.566-2.045 4.566-4.567V60.043c0-2.52-2.04-4.566-4.56-4.566zm13.888 0c-2.52 0-4.566 2.045-4.566 4.566V72.03c0 2.522 2.045 4.567 4.566 4.567 2.522 0 4.567-2.045 4.567-4.567V60.043c0-2.52-2.045-4.566-4.567-4.566zm13.89 21.12c2.522 0 4.567-2.044 4.567-4.566v-3.99c0-2.522-2.045-4.567-4.567-4.567-2.522 0-4.566 2.045-4.566 4.567v3.995c0 2.524 2.044 4.57 4.566 4.57z"
-              id="diagram-cache" />
-            <path
-              d="M36.352 68.593v55.405c0 7.533 6.1 13.633 13.627 13.633h64.15c7.532 0 13.64-6.094 13.64-13.63V68.595c0-7.523-6.107-13.626-13.64-13.626h-2.796v-8.202c0-2.293-1.86-4.15-4.15-4.15s-4.155 1.857-4.155 4.15v16.7c0 2.05-1.657 3.705-3.703 3.705-2.037 0-3.687-1.656-3.687-3.704v-8.5h-7.19v-8.2c0-2.294-1.86-4.15-4.15-4.15-2.3 0-4.15 1.856-4.15 4.15v16.7c0 2.048-1.65 3.704-3.703 3.704-2.037 0-3.688-1.658-3.688-3.706v-8.5h-7.1v-8.2c0-2.294-1.865-4.15-4.15-4.15-2.3 0-4.156 1.856-4.156 4.15v16.7c0 2.048-1.652 3.704-3.7 3.704-2.042 0-3.693-1.657-3.693-3.705v-8.5c-7.515.01-13.61 6.105-13.61 13.627zm81.503 53.72c0 2.425-1.966 4.39-4.39 4.39h-62.23c-2.424 0-4.395-1.965-4.395-4.39v-35.72h71.015v35.723zm-4.947-29.247v5.54h-3.218v22.145h-5.42V98.61h-3.207v-5.54h11.845m-13.08 0v27.685h-4.752l-2.82-12.585v12.586h-4.53v-27.69h4.53l3.04 12.467V93.066h4.53m-23.07 0h9.037v5.54h-3.618v5.25h3.387v5.267h-3.387v6.087h3.98v5.54h-9.4V93.067m-.927 0l-2.755 27.685h-8.228l-3.128-27.684h5.716c.66 7.626 1.133 14.073 1.417 19.34.283-5.324.58-10.055.888-14.193l.373-5.147h5.72m-23.843 0h9.04v5.54h-3.62v5.25h3.387v5.267H57.41v6.087h3.977v5.54h-9.4V93.067"
-              id="diagram-event" />
-          </defs>
-        </svg>
-
-        <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
+        <p class="lead" style="padding-bottom: 1em;">
           When a Service Worker first gets installed, it tries to put a list of files
           you created into the cache so it can potentially get the files from there next time.
           This depends on the specific cache strategy that has been used.
-          If the service worker fails to cache files for some reason, it tries to cache them the next time.
+          There are multiple strategies that are all viable and have their own pro’s and con’s.
         </p>
+      </main>
+    </section>
 
-        <div class="row" style="padding-bottom: 3em;" data-aos="fade-right">
-
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left; padding-bottom: 5em;" class="inner cover">
+        <!-- ROW -->
+        <div class="row" style="padding-bottom: 3em;">
+          <!-- COLUMN 1 -->
           <div class="col-6">
             <p class="lead" style="padding-bottom: 1em;">
               In the diagram you can see how the Service Worker is instantiated for the first time.
               The service Worker is going to be installed once you go to the website, putting itself in Cache.
               This happens after you have loaded the page, so that there is no lack of performance on reaching the
               website.
-              Once the Service Worker is installed, It puts all necessary files from the website into the Cache.
+              Once the Service Worker is installed, It puts all necessary files from the website into Cache.
               After this it's ready to be used and activated when reaching the website another time.
               It does not matter if the user is on-line or off-line at this point, as the Service Worker and the whole
               website is stored in Cache.
             </p>
           </div>
-
+          <!-- COLUMN 2 -->
           <div class="col-6">
             <div class="diagram-container" style="padding-top: 25%; padding-bottom: 25%;">
               <svg viewBox="0 0 549.92853 342.97787">
@@ -225,20 +245,97 @@
               </svg>
             </div>
           </div>
-
         </div>
 
-        <!-- <div data-aos="fade-right"> -->
-          <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et lacus dapibus, lacinia odio vitae, consequat massa. 
-            Cras eget eros id turpis luctus tincidunt. Sed finibus, libero porttitor pharetra elementum, metus leo ultricies nunc, vel cursus leo tellus eu ante. 
-            Quisque porttitor posuere diam quis malesuada. Morbi viverra quam pharetra, laoreet lectus non, scelerisque mi. Aliquam ut nunc quis nunc consectetur aliquam. 
-            Morbi dui ipsum, efficitur ut luctus varius, pellentesque ac orci. Aliquam blandit feugiat metus, ultricies lobortis neque. Nulla vitae suscipit lorem, vel porttitor mi. 
-            Vivamus nec neque mi. Quisque sodales dolor volutpat fringilla mollis. Nulla tincidunt, nisi sit amet dapibus elementum, lacus velit venenatis diam, blandit lacinia elit ex quis neque. 
-            Sed tincidunt tempor velit, quis efficitur leo gravida sed. Etiam tempor eleifend arcu, ac vulputate arcu ullamcorper egestas. Maecenas scelerisque at libero ac semper.
-          </p>
-        
-        <!-- <div class="diagram-container" style="padding-top: 15%; padding-bottom: 15%;">
+        <p class="lead" style="padding-bottom: 5em;">
+          A service worker tries to cleanse old files from the cache on the activate phase, which is just after the
+          install phase.
+          This way, users aren’t stuck with old files which can’t be updated unless they are deleted manually.
+          This step is often overlooked but is actually very important, because this step also makes sure files aren’t
+          cached multiple times.
+          If this step isn’t implemented, the size of the PWA will increase every time a user visits the web app.
+
+          In the next segment, the most used strategies will be discussed.
+        </p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h1 id="pwa_strategies" class="cover-heading" style="padding-bottom: .5em;">PWA strategies</h1>
+        <h3 class="cover-heading">On network response</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          This strategy is useful for resources that are updated frequently, such as news articles.
+          The service worker first checks if the request matches anything in the cache. If it doesn’t match anything,
+          it’ll try to get it from the network. The page will then be sent to the page and is added to the cache at the
+          same time.
+        </p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">Stale-while-revalidate</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          The stale-while-revalidate strategy is the opposite of the ‘on network response’ strategy.
+          It is useful in situations where the content isn’t updated a lot and stays the same.
+          It is also useful on frequently updated resources where having the latest version is not essential.
+          This strategy fully utilises the speed of the cache storage.
+          When a service worker gets a request for a page,
+          it will always get the one from the cache and update it later if possible.
+        </p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">Cache, falling back to network</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          This strategy is ideal for building an offline-first web app.
+          It is very similar to ‘stale-while-revalidate’. The only difference is that with this strategy,
+          the cache isn’t updated at all. This does make a difference in speed since it doesn’t have to update the cache
+          in
+          the background.
+          It only gets a request from the network if it is not found in the cache.
+          The opposite of this strategy is ‘Network falling back to cache’.
+        </p>
+      </main>
+    </section>
+
+    <section data-aos="fade-right">
+      <main role="main" style="text-align: left;" class="inner cover">
+        <h3 class="cover-heading">Cache & network race</h3>
+        <p class="lead" style="padding-bottom: 1em;">
+          In this strategy the service worker lets the cache and network race for the fastest response.
+          If the network gets the page quicker (most of the time this is because the file isn’t in the cache yet) it
+          will
+          show the one from the network,
+          and the other way around. This strategy is ideal for a lot of small assets where you want
+          to get the most performance out of devices with slow disk access.
+        </p>
+      </main>
+    </section>
+
+
+
+
+    <!-- <div data-aos="fade-right"> -->
+    <p class="lead" style="padding-bottom: 1em;" data-aos="fade-right">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et lacus dapibus, lacinia odio vitae, consequat
+      massa.
+      Cras eget eros id turpis luctus tincidunt. Sed finibus, libero porttitor pharetra elementum, metus leo ultricies
+      nunc, vel cursus leo tellus eu ante.
+      Quisque porttitor posuere diam quis malesuada. Morbi viverra quam pharetra, laoreet lectus non, scelerisque mi.
+      Aliquam ut nunc quis nunc consectetur aliquam.
+      Morbi dui ipsum, efficitur ut luctus varius, pellentesque ac orci. Aliquam blandit feugiat metus, ultricies
+      lobortis neque. Nulla vitae suscipit lorem, vel porttitor mi.
+      Vivamus nec neque mi. Quisque sodales dolor volutpat fringilla mollis. Nulla tincidunt, nisi sit amet dapibus
+      elementum, lacus velit venenatis diam, blandit lacinia elit ex quis neque.
+      Sed tincidunt tempor velit, quis efficitur leo gravida sed. Etiam tempor eleifend arcu, ac vulputate arcu
+      ullamcorper egestas. Maecenas scelerisque at libero ac semper.
+    </p>
+
+    <!-- <div class="diagram-container" style="padding-top: 15%; padding-bottom: 15%;">
         <svg viewBox="0 0 549.92853 265">
           <g transform="translate(-36.352 -120.593)">
             <text x="248.603" y="384.105" class="label">ServiceWorker</text>
@@ -333,8 +430,8 @@
 
     <footer class="mastfoot mt-auto" style="padding-top: 5em;">
       <div class="inner">
-        <p>Made by 
-          <a href="https://www.linkedin.com/in/derk-sonneveld-21533b134/">Derk Sonneveld</a> & 
+        <p>Made by
+          <a href="https://www.linkedin.com/in/derk-sonneveld-21533b134/">Derk Sonneveld</a> &
           <a href="https://www.linkedin.com/in/vincent-van-der-spelt-61b17b12b/">Vincent van der Spelt</a>
         </p>
       </div>
@@ -351,19 +448,19 @@
   <!-- <script src="../../assets/js/vendor/popper.min.js"></script>
   <script src="../../dist/js/bootstrap.min.js"></script> -->
   <script>
-  if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
-            .then((reg) => {
-              console.log('Service worker registered.', reg);
-            });
+          .then((reg) => {
+            console.log('Service worker registered.', reg);
+          });
       });
     }
   </script>
 
 </body>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="./aos.js"></script>
 <script>
   AOS.init();
 </script>

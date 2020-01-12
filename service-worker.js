@@ -1,12 +1,14 @@
 'use strict';
 
 // CODELAB: Update cache names any time any of the cached files change.
-const CACHE_NAME = 'static-cache-v1';
+const CACHE_NAME = 'PWA cache';
 
 // CODELAB: Add list of files to cache here.
 const FILES_TO_CACHE = [
   './index.html',
   './cover.css',
+  './aos.js',
+  './aos.css',
   './icons/PWA128x128.png',
   './icons/PWA144x144.png',
   './icons/PWA152x152.png',
@@ -55,7 +57,7 @@ self.addEventListener('fetch', (evt) => {
           .catch(() => {
             return caches.open(CACHE_NAME)
                 .then((cache) => {
-                  return cache.match('pwa/index.html');
+                  return cache.match('./index.html');
                 });
           })
   );
